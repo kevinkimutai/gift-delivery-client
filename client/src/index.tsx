@@ -13,9 +13,14 @@ import { setContext } from "@apollo/client/link/context";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 
+const uri =
+  process.env.NODE_ENV === "production"
+    ? process.env.REACT_APP_API_URL
+    : "http://localhost:4000/graphql";
+
 //TODO: ADD Production URL INSTEAD OF LOCALHOST DURING DEPLOYMENT
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000/graphql",
+  uri,
 });
 
 //TODO:ADD REDUX INSTEAD OF LOCALSTORAGE
