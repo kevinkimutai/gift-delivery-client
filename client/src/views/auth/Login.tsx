@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [loginToAcc, { loading, error, data }] = useMutation(LOGIN_USER);
+  const [loginToAcc, { loading, error }] = useMutation(LOGIN_USER);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

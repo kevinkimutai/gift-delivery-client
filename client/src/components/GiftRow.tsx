@@ -1,14 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
-import { BsFlower1 } from "react-icons/bs";
+
 import { FaWineBottle } from "react-icons/fa";
 
 import { useQuery } from "@apollo/client";
-import {
-  GETALLGIFTS,
-  GETGIFTSBYCATEGORY,
-} from "../services/graphql/queriesMutations";
+import { GETGIFTSBYCATEGORY } from "../services/graphql/queriesMutations";
 import { ClipLoader } from "react-spinners";
-import { motion } from "framer-motion";
+
 import { Link } from "react-router-dom";
 import { HiArrowSmallLeft, HiArrowSmallRight } from "react-icons/hi2";
 
@@ -65,7 +62,7 @@ const GiftRow = (props: PageProps) => {
           <div>something went wrong!!!</div>
         ) : (
           <>
-            <div className="bg-purple-600 p-2 text-white">
+            <div className="bg-purple-600 p-2 text-white flex justify-between items-center">
               <h2 className="flex items-center text-lg">
                 <span>
                   {/*TODO: ADD ANIMATION TO ICON */}
@@ -73,28 +70,30 @@ const GiftRow = (props: PageProps) => {
                 </span>
                 {props.category.name}
               </h2>
+              <div>
+                {showLeftArrow && (
+                  <button
+                    className="bg-purple-300 rounded-full p-3 absolute top-[40%] left-0 z-40"
+                    onClick={scrollToLeft}
+                  >
+                    <HiArrowSmallLeft />
+                  </button>
+                )}
+                {showRightArrow && (
+                  <button
+                    className="bg-purple-300 rounded-full p-3 absolute top-[40%] right-0 z-40"
+                    onClick={scrollToRight}
+                  >
+                    <HiArrowSmallRight />
+                  </button>
+                )}
+              </div>
             </div>
             <div
               ref={scrollableRef}
               className="flex justify-start items-start bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide relative"
             >
               {/*TODO:ADD SCROLLABLE BTNS*/}
-              {/* {showLeftArrow && (
-                <button
-                  className="bg-purple-300 rounded-full p-3 absolute top-[40%] left-0 z-40"
-                  onClick={scrollToLeft}
-                >
-                  <HiArrowSmallLeft />
-                </button>
-              )}
-              {showRightArrow && (
-                <button
-                  className="bg-purple-300 rounded-full p-3 absolute top-[40%] right-0 z-40"
-                  onClick={scrollToRight}
-                >
-                  <HiArrowSmallRight />
-                </button>
-              )} */}
 
               {data?.giftsByCategory.map((item: any) => (
                 <Link to={`/gifts/${item.id}`}>

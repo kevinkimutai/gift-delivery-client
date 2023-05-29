@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { motion, AnimatePresence, Variants, useCycle } from "framer-motion";
+import { motion, AnimatePresence, useCycle } from "framer-motion";
 
 const texts = [
   "SALE SALE SALE ",
@@ -7,15 +7,15 @@ const texts = [
   "UPTO JUNE 3RD ",
   "GRAB IT WHILE STOCKS LAST ",
 ];
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
+// const containerVariants: Variants = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.2,
+//     },
+//   },
+// };
 
 const textVariants = {
   initial: {
@@ -52,7 +52,7 @@ const PromoMsg = () => {
     }, 3500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [cycleText]);
   return (
     <AnimatePresence mode="popLayout">
       <motion.ul className="flex justify-center items-center bg-red-700">

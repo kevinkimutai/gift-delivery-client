@@ -6,12 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import { storage } from "../../config/firebase.config";
-import {
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { HashLoader, PuffLoader } from "react-spinners";
 import {
   ADD_GIFT,
@@ -27,10 +22,8 @@ const validFileExtensions = {
 };
 
 const AddGift = () => {
-  const [
-    addNewGift,
-    { loading: submitting, error: errorSubmit, data: savedData },
-  ] = useMutation(ADD_GIFT);
+  const [addNewGift, { loading: submitting, error: errorSubmit }] =
+    useMutation(ADD_GIFT);
   const {
     loading: categoryLoading,
     error: categoryError,

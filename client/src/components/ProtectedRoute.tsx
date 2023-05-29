@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
 import { useQuery } from "@apollo/client";
@@ -25,7 +25,7 @@ const ProtectedRoute = (props: PageProps) => {
     const decoded: any = jwtDecode(token);
     setUserId(decoded.id);
     setIsLoading(false);
-  }, []);
+  }, [token]);
 
   if (isLoading || loading) {
     return (
@@ -33,6 +33,10 @@ const ProtectedRoute = (props: PageProps) => {
         <PuffLoader color="#36d7b7" />
       </div>
     );
+  }
+
+  if (error) {
+    return <div className="flex justify-center items-center p-4 ">ERROR</div>;
   }
 
   return (

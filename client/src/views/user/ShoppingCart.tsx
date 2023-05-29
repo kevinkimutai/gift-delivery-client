@@ -68,13 +68,13 @@ const ShoppingCart = () => {
   };
 
   //TODO: MODIFY TO ADD FOR SPECIFIC PRODUCT
-  const clearCart = () => {
-    localStorage.removeItem("cart");
-    localStorage.removeItem("quantity");
+  // const clearCart = () => {
+  //   localStorage.removeItem("cart");
+  //   localStorage.removeItem("quantity");
 
-    //@ts-ignore
-    dispatch(cartActions.addToCart());
-  };
+  //   //@ts-ignore
+  //   dispatch(cartActions.addToCart());
+  // };
 
   return (
     <>

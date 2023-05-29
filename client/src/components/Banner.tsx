@@ -112,7 +112,7 @@ const Banner = () => {
     }, 3500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [cycleText]);
 
   return (
     <AnimatePresence mode="wait">

@@ -7,13 +7,11 @@ import Logo from "../../assets/img/gift-logo.png";
 import { ADD_USER } from "../../services/graphql/queriesMutations";
 import { toast } from "react-toastify";
 import { PuffLoader } from "react-spinners";
-import { useDispatch } from "react-redux";
-import { userSliceActions } from "../../store/features/userReducer";
+
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const [addNewUser, { error, loading, data: savedUserData }] =
-    useMutation(ADD_USER);
+  const [addNewUser, { error, loading }] = useMutation(ADD_USER);
   const navigate = useNavigate();
 
   const formik = useFormik({

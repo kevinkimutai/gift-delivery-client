@@ -2,7 +2,6 @@ import React from "react";
 
 import "./App.css";
 import {
-  Home,
   Gifts,
   GiftId,
   AdminOrders,
