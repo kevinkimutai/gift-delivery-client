@@ -15,7 +15,7 @@ import { store } from "./store/store";
 
 const uri =
   process.env.NODE_ENV === "production"
-    ? process.env.REACT_APP_API_URL
+    ? "https://gift-delivery-server-production.up.railway.app/graphql"
     : "http://localhost:4000/graphql";
 
 //TODO: ADD Production URL INSTEAD OF LOCALHOST DURING DEPLOYMENT

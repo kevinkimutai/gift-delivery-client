@@ -13,7 +13,7 @@ import { PuffLoader } from "react-spinners";
 const Gifts = () => {
   const { error, loading, data } = useQuery(GETALLCATEGORIES);
   return (
-    <main className="bg-gradient-to-r from-yellow-200 to-white overflow-hidden min-h-screen w-screen">
+    <main className="bg-gradient-to-r from-yellow-200 to-white overflow-x-hidden overflow-y-scroll h-screen w-screen">
       <PromoMsg />
       <ShopNavigation />
       {loading ? (

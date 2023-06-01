@@ -22,6 +22,10 @@ const GiftRow = (props: PageProps) => {
     variables: { id: props.category.id },
   });
 
+  //@ts-ignore
+  // const divElement: any = scrollableRef.current;
+  // const clientWidth = divElement.scrollWidth;
+
   useEffect(() => {
     const divElement: any = scrollableRef.current;
     if (divElement) {
@@ -70,28 +74,22 @@ const GiftRow = (props: PageProps) => {
                 </span>
                 {props.category.name}
               </h2>
-              <div>
-                {showLeftArrow && (
-                  <button
-                    className="bg-purple-300 rounded-full p-3 absolute top-[40%] left-0 z-40"
-                    onClick={scrollToLeft}
-                  >
-                    <HiArrowSmallLeft />
-                  </button>
-                )}
-                {showRightArrow && (
-                  <button
-                    className="bg-purple-300 rounded-full p-3 absolute top-[40%] right-0 z-40"
-                    onClick={scrollToRight}
-                  >
-                    <HiArrowSmallRight />
-                  </button>
-                )}
+              <div className="hidden sm:flex items-center">
+                {/* {showLeftArrow && ( */}
+                <button className="text-white text-xl" onClick={scrollToLeft}>
+                  <HiArrowSmallLeft />
+                </button>
+                {/* )} */}
+                {/* {showRightArrow && ( */}
+                <button className="text-white text-xl" onClick={scrollToRight}>
+                  <HiArrowSmallRight />
+                </button>
+                {/* )} */}
               </div>
             </div>
             <div
               ref={scrollableRef}
-              className="flex justify-start items-start bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide relative"
+              className="flex flex-col sm:flex-row  bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide "
             >
               {/*TODO:ADD SCROLLABLE BTNS*/}
 
@@ -99,7 +97,7 @@ const GiftRow = (props: PageProps) => {
                 <Link to={`/gifts/${item.id}`}>
                   <div
                     key={item.id}
-                    className="flex justify-between flex-col border-2 shadow p-2 min-w-[10rem] m-3 min-h-[17rem] hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
+                    className="flex justify-between flex-col border-2 shadow p-2 min-w-[10rem] m-3 h-full hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
                   >
                     <img
                       src={item.image}

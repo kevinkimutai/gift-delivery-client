@@ -84,8 +84,8 @@ const ShoppingCart = () => {
           Shopping Cart
         </h1>
         <div className="flex justify-center">
-          <div className="flex w-full shadow-md p-5">
-            <div className="flex flex-col h-full w-2/3">
+          <div className="flex flex-col-reverse md:flex-row  w-full shadow-md p-2 lg:p-5">
+            <div className="flex flex-col h-full w-full md:w-2/3">
               {cartItems.map((cart: any) => (
                 <div
                   className="flex justify-between items-start w-full border-b border-red-700  p-4"
@@ -134,7 +134,7 @@ const ShoppingCart = () => {
                 </div>
               ))}
             </div>
-            <div className="w-1/3 p-4">
+            <div className="w-full  md:w-1/3 ml-auto p-4 mb-4">
               <div className="p-5 bg-purple-500 h-fit w-full rounded-md">
                 <h1 className="text-xl underline underline-offset-8 text-white font-semibold mb-5">
                   Order Summary

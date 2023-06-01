@@ -82,12 +82,12 @@ const Signup = () => {
           <>
             {/*TODO: ADD FOCUS STYLES AND HOVER ON BUTTON*/}
 
-            <div className="flex justify-center items-center w-2/5 h-fit  shadow-lg">
+            <div className="flex justify-center items-center w-4/5 md:w-3/5 lg:w-2/5 h-fit  shadow-lg">
               {/* <div className="flex justify-center items-center p-3 min-h-[25rem] bg-white w-1/3 border-2 border-red-600">
           <img src={Image} alt="login" className="object-contain" />
         </div> */}
               <div className="flex flex-col justify-center items-start bg-purple-400 min-h-[25rem] w-full py-4 px-12 shadow-lg">
-                <div className="flex items-center mb-4">
+                {/* <div className="flex items-center mb-4">
                   <img
                     src={Logo}
                     alt="logo"
@@ -96,7 +96,7 @@ const Signup = () => {
                   <span className="italic text-lg font-semibold text-white">
                     Giftr
                   </span>
-                </div>
+                </div> */}
                 <h1 className="text-white font-semibold text-2xl mb-2">
                   Signup
                 </h1>

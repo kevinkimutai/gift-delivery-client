@@ -70,11 +70,11 @@ const Login = () => {
       ) : (
         <>
           <div className="flex justify-center items-center w-2/3 h-fit  shadow-lg">
-            <div className="flex justify-center items-center p-3 h-[25rem] bg-white w-1/3">
+            <div className="hidden md:flex justify-center items-center p-3 h-[25rem] bg-white w-1/3">
               <img src={Image} alt="login" className="object-contain" />
             </div>
-            <div className="flex flex-col justify-center items-start bg-purple-400 h-[25rem] w-2/3 py-4 px-8">
-              <div className="flex items-center mb-4">
+            <div className="flex flex-col justify-center items-start bg-purple-400 h-[25rem] w-full md:w-2/3 py-4 px-8">
+              {/* <div className="hidden md:flex  items-center mb-4">
                 <img
                   src={Logo}
                   alt="logo"
@@ -83,7 +83,7 @@ const Login = () => {
                 <span className="italic text-lg font-semibold text-white">
                   Giftr
                 </span>
-              </div>
+              </div> */}
               <h1 className="text-white font-semibold text-2xl mb-2">Login</h1>
               <p className="text-yellow-200 max-w-xs text-sm mb-5">
                 Login to your account to continue shopping for your loved one a
@@ -99,7 +99,7 @@ const Login = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.email}
-                      className="bg-white p-2 rounded-md w-2/3  focus:outline-none focus:ring-1 focus:ring-sky-400 focus:bg-yellow-200"
+                      className="bg-white p-2 rounded-md lg:w-2/3 w-full  focus:outline-none focus:ring-1 focus:ring-sky-400 focus:bg-yellow-200"
                       placeholder="Email..."
                     />
                     {formik.touched.email && formik.errors.email ? (
@@ -117,7 +117,7 @@ const Login = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.password}
-                      className="bg-white p-2 rounded-md w-2/3  focus:outline-none focus:ring-1 focus:ring-sky-400 focus:bg-yellow-200"
+                      className="bg-white p-2 rounded-md lg:w-2/3 w-full  focus:outline-none focus:ring-1 focus:ring-sky-400 focus:bg-yellow-200"
                       placeholder="Password..."
                       type="password"
                     />
@@ -128,7 +128,7 @@ const Login = () => {
                     ) : null}
                   </div>
                 </div>
-                <div className="flex justify-center items-center">
+                <div className="flex lg:justify-center justify-end items-center">
                   <button
                     className="bg-sky-500 text-white px-6 py-2 rounded-md mb-4"
                     type="submit"
