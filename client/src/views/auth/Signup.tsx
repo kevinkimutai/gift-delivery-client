@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
 import { ToastContainer } from "react-toastify";
-import Logo from "../../assets/img/gift-logo.png";
+
 import { ADD_USER } from "../../services/graphql/queriesMutations";
 import { toast } from "react-toastify";
 import { PuffLoader } from "react-spinners";

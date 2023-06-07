@@ -1,7 +1,7 @@
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "../../assets/img/login-svg.png";
-import Logo from "../../assets/img/gift-logo.png";
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { LOGIN_USER } from "../../services/graphql/queriesMutations";
