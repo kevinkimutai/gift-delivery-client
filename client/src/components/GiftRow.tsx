@@ -75,16 +75,19 @@ const GiftRow = (props: PageProps) => {
                 {props.category.name}
               </h2>
               <div className="hidden sm:flex items-center">
-                {/* {showLeftArrow && ( */}
-                <button className="text-white text-xl" onClick={scrollToLeft}>
-                  <HiArrowSmallLeft />
-                </button>
-                {/* )} */}
-                {/* {showRightArrow && ( */}
-                <button className="text-white text-xl" onClick={scrollToRight}>
-                  <HiArrowSmallRight />
-                </button>
-                {/* )} */}
+                {showLeftArrow && (
+                  <button className="text-white text-xl" onClick={scrollToLeft}>
+                    <HiArrowSmallLeft />
+                  </button>
+                )}
+                {showRightArrow && (
+                  <button
+                    className="text-white text-xl"
+                    onClick={scrollToRight}
+                  >
+                    <HiArrowSmallRight />
+                  </button>
+                )}
               </div>
             </div>
             <div
