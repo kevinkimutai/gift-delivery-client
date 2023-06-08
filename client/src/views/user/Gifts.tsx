@@ -1,12 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 
-import {
-  GiftRow,
-  PromoBanner,
-  PromoMsg,
-  ShopNavigation,
-} from "../../components";
+import { GiftRow, PromoMsg, ShopNavigation } from "../../components";
 import { GETALLCATEGORIES } from "../../services/graphql/queriesMutations";
 import { PuffLoader } from "react-spinners";
 
@@ -41,7 +36,7 @@ const Gifts = () => {
               category={data.categories[0]}
             />
 
-            <PromoBanner />
+            {/* <PromoBanner /> */}
 
             <GiftRow
               key={data.categories[2].id}

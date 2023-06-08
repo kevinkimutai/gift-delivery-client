@@ -69,11 +69,11 @@ const Login = () => {
         <div>{error.message}</div>
       ) : (
         <>
-          <div className="flex justify-center items-center w-2/3 h-fit  shadow-lg">
+          <div className="flex justify-center items-center w-4/5 xxsm:w-2/3 h-fit  shadow-lg">
             <div className="hidden md:flex justify-center items-center p-3 h-[25rem] bg-white w-1/3">
               <img src={Image} alt="login" className="object-contain" />
             </div>
-            <div className="flex flex-col justify-center items-start bg-purple-400 h-[25rem] w-full md:w-2/3 py-4 px-8">
+            <div className="flex flex-col justify-center items-start bg-purple-400 h-[25rem] w-full md:w-2/3 py-4 px-4 xs:px-8">
               {/* <div className="hidden md:flex  items-center mb-4">
                 <img
                   src={Logo}

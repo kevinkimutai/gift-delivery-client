@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ShopNavigation } from "../../components";
 import { HiMinusSmall, HiPlusSmall, HiTrash } from "react-icons/hi2";
+import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/features/cartReducer";
 
@@ -79,7 +80,7 @@ const ShoppingCart = () => {
   return (
     <>
       <ShopNavigation />
-      <section className="px-10 py-5 bg-gradient-to-r from-yellow-200 to-white overflow-hidden min-h-screen w-screen">
+      <section className="px-4 sm:px-10 py-5 bg-gradient-to-r from-yellow-200 to-white overflow-hidden min-h-screen w-screen">
         <h1 className="font-semibold text-purple-600 text-2xl mb-9">
           Shopping Cart
         </h1>
@@ -91,7 +92,7 @@ const ShoppingCart = () => {
                   className="flex justify-between items-start w-full border-b border-red-700  p-4"
                   key={cart.id}
                 >
-                  <div className="flex h-full">
+                  <div className="flex flex-col sm:flex-row h-full">
                     <img
                       className="w-[10rem] object-contain mr-4"
                       src={cart.image}
@@ -111,19 +112,23 @@ const ShoppingCart = () => {
                         </span>
                       </p>
                       <div className="flex items-center justify-center">
-                        <HiMinusSmall
-                          className="mr-2 cursor-pointer"
-                          onClick={() => {
-                            reduceQty(cart);
-                          }}
-                        />
+                        <motion.span whileTap={{ scale: 1.08 }}>
+                          <HiMinusSmall
+                            className="mr-2 cursor-pointer"
+                            onClick={() => {
+                              reduceQty(cart);
+                            }}
+                          />
+                        </motion.span>
                         <span className="bg-purple-400 py-1 px-3 text-yellow-200">
                           {cart.qty}
                         </span>
-                        <HiPlusSmall
-                          className="ml-2 cursor-pointer"
-                          onClick={() => addQty(cart)}
-                        />
+                        <motion.span whileTap={{ scale: 1.08 }}>
+                          <HiPlusSmall
+                            className="ml-2 cursor-pointer"
+                            onClick={() => addQty(cart)}
+                          />
+                        </motion.span>
                       </div>
                     </div>
                     <div className="flex items-center justify-center">

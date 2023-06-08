@@ -2,7 +2,7 @@ import React from "react";
 
 const PromoBanner = () => {
   return (
-    <section className="flex justify-center items-center px-10 ">
+    <section className="flex justify-center items-center px-4 sm:px-10 ">
       <div className="flex justify-center items-center border shadow-lg w-[80%] bg-gradient-to-r from-teal-500 to-purple-400">
         <div className="w-1/2 flex justify-center items-center ">
           <div className="w-1/2 ">

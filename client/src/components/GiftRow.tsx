@@ -58,7 +58,7 @@ const GiftRow = (props: PageProps) => {
   };
 
   return (
-    <section className="p-10 w-full">
+    <section className="p-4 sm:p-10 mb-5 w-full">
       <div className="border shadow-md">
         {loading ? (
           <ClipLoader color="#c084fc" />
@@ -92,7 +92,7 @@ const GiftRow = (props: PageProps) => {
             </div>
             <div
               ref={scrollableRef}
-              className="flex flex-col sm:flex-row  bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide "
+              className="flex flex-col sm:flex-row items-center justify-center  bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide "
             >
               {/*TODO:ADD SCROLLABLE BTNS*/}
 
@@ -100,7 +100,7 @@ const GiftRow = (props: PageProps) => {
                 <Link to={`/gifts/${item.id}`}>
                   <div
                     key={item.id}
-                    className="flex justify-between flex-col border-2 shadow p-2 min-w-[10rem] m-3 h-full hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
+                    className="flex justify-between flex-col border-2 shadow p-2 max-w-[18rem] max-w-sm-fit min-w-[6rem] sm:min-w-[10rem] m-3 h-full hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
                   >
                     <img
                       src={item.image}
