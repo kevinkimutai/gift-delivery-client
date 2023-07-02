@@ -26,17 +26,6 @@ const GiftRow = (props: PageProps) => {
   // const divElement: any = scrollableRef.current;
   // const clientWidth = divElement.scrollWidth;
 
-  useEffect(() => {
-    const divElement: any = scrollableRef.current;
-    if (divElement) {
-      console.log(divElement.clientWidth);
-      setShowLeftArrow(divElement.scrollLeft > 0);
-      setShowRightArrow(
-        divElement.scrollLeft < divElement.scrollWidth - divElement.clientWidth
-      );
-    }
-  }, []);
-
   const scrollToLeft = () => {
     const divElement: any = scrollableRef.current;
     if (divElement) {
@@ -58,7 +47,7 @@ const GiftRow = (props: PageProps) => {
   };
 
   return (
-    <section className="p-4 sm:p-10 mb-5 w-full">
+    <section className="p-4 mb-2 w-full">
       <div className="border shadow-md">
         {loading ? (
           <ClipLoader color="#c084fc" />
@@ -74,12 +63,7 @@ const GiftRow = (props: PageProps) => {
                 </span>
                 {props.category.name}
               </h2>
-              <div className="hidden sm:flex items-center">
-                {showLeftArrow && (
-                  <button className="text-white text-xl" onClick={scrollToLeft}>
-                    <HiArrowSmallLeft />
-                  </button>
-                )}
+              {/*              
                 {showRightArrow && (
                   <button
                     className="text-white text-xl"
@@ -88,19 +72,26 @@ const GiftRow = (props: PageProps) => {
                     <HiArrowSmallRight />
                   </button>
                 )}
-              </div>
+              </div> */}
             </div>
-            <div
-              ref={scrollableRef}
-              className="flex flex-col sm:flex-row items-center justify-center  bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide "
-            >
-              {/*TODO:ADD SCROLLABLE BTNS*/}
-
-              {data?.giftsByCategory.map((item: any) => (
-                <Link to={`/gifts/${item.id}`}>
+            <div className="relative ">
+              <div
+                className="hidden sm:block bg-purple-600 p-4 absolute left-0 z-10 top-20 cursor-pointer"
+                onClick={scrollToLeft}
+              >
+                <button className="text-white text-xl">
+                  <HiArrowSmallLeft />
+                </button>
+              </div>
+              <div
+                ref={scrollableRef}
+                className="flex flex-row bg-white p-4 pb-7 w-full overflow-x-scroll scrollbar-hide "
+              >
+                {/*TODO:ADD SCROLLABLE BTNS*/}
+                {data?.giftsByCategory.map((item: any) => (
                   <div
                     key={item.id}
-                    className="flex justify-between flex-col border-2 shadow p-2 max-w-[18rem] max-w-sm-fit min-w-[6rem] sm:min-w-[10rem] m-3 h-full hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
+                    className="flex justify-between items-start flex-col border-2 shadow p-2 min-w-[10rem] m-3 hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
                   >
                     <img
                       src={item.image}
@@ -115,8 +106,16 @@ const GiftRow = (props: PageProps) => {
                       </p>
                     </div>
                   </div>
-                </Link>
-              ))}
+                ))}
+              </div>
+              <div
+                className="hidden sm:block bg-purple-600 p-4 absolute right-0 z-10 top-20 cursor-pointer"
+                onClick={scrollToRight}
+              >
+                <button className="text-white text-xl">
+                  <HiArrowSmallRight />
+                </button>
+              </div>
             </div>
           </>
         )}
