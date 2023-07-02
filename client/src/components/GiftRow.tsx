@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 
 import { FaWineBottle } from "react-icons/fa";
 
@@ -6,7 +6,6 @@ import { useQuery } from "@apollo/client";
 import { GETGIFTSBYCATEGORY } from "../services/graphql/queriesMutations";
 import { ClipLoader } from "react-spinners";
 
-import { Link } from "react-router-dom";
 import { HiArrowSmallLeft, HiArrowSmallRight } from "react-icons/hi2";
 
 type PageProps = {
@@ -15,16 +14,10 @@ type PageProps = {
 
 const GiftRow = (props: PageProps) => {
   const scrollableRef = useRef(null);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(false);
 
   const { loading, error, data } = useQuery(GETGIFTSBYCATEGORY, {
     variables: { id: props.category.id },
   });
-
-  //@ts-ignore
-  // const divElement: any = scrollableRef.current;
-  // const clientWidth = divElement.scrollWidth;
 
   const scrollToLeft = () => {
     const divElement: any = scrollableRef.current;
@@ -63,16 +56,6 @@ const GiftRow = (props: PageProps) => {
                 </span>
                 {props.category.name}
               </h2>
-              {/*              
-                {showRightArrow && (
-                  <button
-                    className="text-white text-xl"
-                    onClick={scrollToRight}
-                  >
-                    <HiArrowSmallRight />
-                  </button>
-                )}
-              </div> */}
             </div>
             <div className="relative ">
               <div
