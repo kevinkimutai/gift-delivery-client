@@ -1,5 +1,5 @@
 import React from "react";
-import { HiBars3BottomRight, HiUser, HiShoppingCart } from "react-icons/hi2";
+import { HiUser, HiShoppingCart } from "react-icons/hi2";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
