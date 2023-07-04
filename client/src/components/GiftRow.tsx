@@ -7,7 +7,7 @@ import { GETGIFTSBYCATEGORY } from "../services/graphql/queriesMutations";
 import { ClipLoader } from "react-spinners";
 
 import { HiArrowSmallLeft, HiArrowSmallRight } from "react-icons/hi2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type PageProps = {
   category: { id: string; name: string };
@@ -42,7 +42,7 @@ const GiftRow = (props: PageProps) => {
   };
 
   return (
-    <section className="p-4 mb-2 w-full">
+    <section className="px-4 sm:px-10 py-4 mb-2 w-full">
       <div className="border shadow-md">
         {loading ? (
           <ClipLoader color="#c084fc" />
@@ -58,10 +58,11 @@ const GiftRow = (props: PageProps) => {
                 </span>
                 {props.category.name}
               </h2>
+              <Link to={"#"}>See All</Link>
             </div>
             <div className="relative ">
               <div
-                className="hidden sm:block bg-purple-600 p-4 absolute left-0 z-10 top-20 cursor-pointer"
+                className="hidden sm:block bg-purple-600 p-4 absolute left-0 z-[5] top-20 cursor-pointer"
                 onClick={scrollToLeft}
               >
                 <button className="text-white text-xl">
@@ -97,7 +98,7 @@ const GiftRow = (props: PageProps) => {
                 ))}
               </div>
               <div
-                className="hidden sm:block bg-purple-600 p-4 absolute right-0 z-10 top-20 cursor-pointer"
+                className="hidden sm:block bg-purple-600 p-4 absolute right-0 z-[5] top-20 cursor-pointer"
                 onClick={scrollToRight}
               >
                 <button className="text-white text-xl">

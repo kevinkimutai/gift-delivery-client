@@ -4,14 +4,15 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import Image from "../assets/img/gift-logo.png";
+import MenuBar from "./MenuBar";
 
 const ShopNavigation = () => {
   const quantity = useSelector((state: any) => state.cartItems.quantity);
 
   return (
-    <section className="flex items-center justify-between px-4 sm:px-10  py-2 bg-white shadow-md sticky top-0 z-50">
+    <section className="flex items-center justify-between px-4 sm:px-10  py-2 bg-white shadow-md sticky top-0 z-10">
       <div className="flex items-center">
-        <HiBars3BottomRight className="text-2xl mr-0 sm:mr-6 cursor-pointer" />
+        <MenuBar />
         <Link to="/">
           <img
             src={Image}

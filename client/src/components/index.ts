@@ -8,6 +8,7 @@ import { default as DashboardOverview } from "./DashboardOverview";
 import { default as OrdersTable } from "./OrdersTable";
 import { default as PromoMsg } from "./PromoMsg";
 import { default as PromoBanner } from "./PromoBanner";
+import { default as MenuBar } from "./MenuBar";
 
 export {
   Banner,
@@ -20,4 +21,5 @@ export {
   OrdersTable,
   PromoMsg,
   PromoBanner,
+  MenuBar,
 };

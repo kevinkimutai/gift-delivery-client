@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { GiftRow, PromoMsg, ShopNavigation } from "../../components";
 import { GETALLCATEGORIES } from "../../services/graphql/queriesMutations";
 import { PuffLoader } from "react-spinners";
+import BotpressWebChat from "../../components/BotPress";
 
 const Gifts = () => {
   const { error, loading, data } = useQuery(GETALLCATEGORIES);
@@ -20,7 +21,6 @@ const Gifts = () => {
       ) : (
         data && (
           <>
-            {console.log(data)}
             {/* <GiftRow
               key={data.categories[0].id}
               category={data.categories[0].id}
@@ -42,6 +42,9 @@ const Gifts = () => {
               key={data.categories[2].id}
               category={data.categories[2]}
             />
+            <div className="w-[10rem] z-[150] shadow-xl">
+              <BotpressWebChat />
+            </div>
           </>
         )
       )}
