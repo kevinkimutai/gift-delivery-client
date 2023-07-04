@@ -9,12 +9,15 @@ import { useMutation } from "@apollo/client";
 import { PuffLoader } from "react-spinners";
 import { userSliceActions } from "../../store/features/userReducer";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginToAcc, { loading, error }] = useMutation(LOGIN_USER);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { from } = location.state;
 
   const formik = useFormik({
     initialValues: {
@@ -47,7 +50,7 @@ const Login = () => {
 
         //TODO: USE HISTORY TO HEAD BACK TO ROUTE
 
-        navigate("auth/login");
+        navigate(from || "/");
 
         resetForm();
       } catch (error) {

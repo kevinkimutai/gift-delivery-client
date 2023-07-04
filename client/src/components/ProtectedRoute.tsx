@@ -45,9 +45,13 @@ const ProtectedRoute = (props: PageProps) => {
       {data && props.allowedRoles?.includes(data?.user?.role) ? (
         props.children
       ) : data ? (
-        <Navigate to="/unauthorized" state={{ from: location }} replace />
+        <Navigate to="/unauthorized" replace />
       ) : (
-        <Navigate to="auth/login" state={{ from: location }} replace />
+        <Navigate
+          to="/auth/login"
+          state={{ from: location.pathname }}
+          replace
+        />
       )}
     </>
   );

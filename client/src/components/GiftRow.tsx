@@ -7,6 +7,7 @@ import { GETGIFTSBYCATEGORY } from "../services/graphql/queriesMutations";
 import { ClipLoader } from "react-spinners";
 
 import { HiArrowSmallLeft, HiArrowSmallRight } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 type PageProps = {
   category: { id: string; name: string };
@@ -14,6 +15,7 @@ type PageProps = {
 
 const GiftRow = (props: PageProps) => {
   const scrollableRef = useRef(null);
+  const navigate = useNavigate();
 
   const { loading, error, data } = useQuery(GETGIFTSBYCATEGORY, {
     variables: { id: props.category.id },
@@ -75,6 +77,9 @@ const GiftRow = (props: PageProps) => {
                   <div
                     key={item.id}
                     className="flex justify-between items-start flex-col border-2 shadow p-2 min-w-[10rem] m-3 hover:scale-110 hover:shadow-sm cursor-pointer transition duration-700 ease-in-out"
+                    onClick={() => {
+                      navigate(`/gifts/${item.id}`);
+                    }}
                   >
                     <img
                       src={item.image}

@@ -1,20 +1,28 @@
 import React from "react";
 import { ShopNavigation } from "../../components";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GETONEGIFT } from "../../services/graphql/queriesMutations";
 import { PuffLoader } from "react-spinners";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/features/cartReducer";
 import { motion } from "framer-motion";
 
 const GiftId = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const location = useLocation();
 
+  const token = useSelector((state: any) => state.user.user);
+
+  const navigate = useNavigate();
   const { loading, error, data } = useQuery(GETONEGIFT, { variables: { id } });
 
   const addToCartHandler = (product: any) => {
+    if (!token) {
+      navigate("/auth/login", { state: { from: location.pathname } });
+    }
+
     let item = { ...product, qty: 1 };
     //set cart item to local Storage
     let data = [];

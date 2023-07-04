@@ -11,7 +11,7 @@ const ShopNavigation = () => {
   return (
     <section className="flex items-center justify-between px-4 sm:px-10  py-2 bg-white shadow-md sticky top-0 z-50">
       <div className="flex items-center">
-        <HiBars3BottomRight className="text-4xl mr-6 cursor-pointer" />
+        <HiBars3BottomRight className="text-2xl mr-0 sm:mr-6 cursor-pointer" />
         <Link to="/">
           <img
             src={Image}
@@ -31,14 +31,14 @@ const ShopNavigation = () => {
       </div>
       <div className="flex justify-center items-center">
         <div className="flex justify-center items-center  mr-2">
-          <HiUser className="mr-1" />
+          <HiUser className="mr-1 text-lg sm:text-2xl " />
           {/*TODO:COME BACK TO USER */}
           <span className="text-purple-700 cursor-pointer hidden md:block">
             User
           </span>
         </div>
         <div className="flex justify-center items-center">
-          <HiShoppingCart className="mr-1" />
+          <HiShoppingCart className="mr-1 text-lg sm:text-2xl " />
 
           <Link to={"/user/cart"} className="relative cursor-pointer">
             <span className="text-purple-700 hidden md:block">Cart</span>
