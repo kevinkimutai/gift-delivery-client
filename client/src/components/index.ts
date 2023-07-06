@@ -9,6 +9,7 @@ import { default as OrdersTable } from "./OrdersTable";
 import { default as PromoMsg } from "./PromoMsg";
 import { default as PromoBanner } from "./PromoBanner";
 import { default as MenuBar } from "./MenuBar";
+import { default as Search } from "./Search";
 
 export {
   Banner,
@@ -22,4 +23,5 @@ export {
   PromoMsg,
   PromoBanner,
   MenuBar,
+  Search,
 };

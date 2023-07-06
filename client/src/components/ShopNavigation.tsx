@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import Image from "../assets/img/gift-logo.png";
 import MenuBar from "./MenuBar";
+import Search from "./Search";
 
 const ShopNavigation = () => {
   const quantity = useSelector((state: any) => state.cartItems.quantity);
@@ -24,12 +25,14 @@ const ShopNavigation = () => {
           Giftr
         </span>
       </div>
-      <div className="">
+
+      <Search />
+      {/* <div className="">
         <input
           placeholder="search for your favourite gift..."
           className="border border-purple-500 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-sky-500 w-[12rem] xxsm:w-[15rem] xs:w-[20rem] md:w-[25rem] lg:w-[30rem] p-2"
         />
-      </div>
+      </div> */}
       <div className="flex justify-center items-center">
         <div className="flex justify-center items-center  mr-2">
           <HiUser className="mr-1 text-lg sm:text-2xl " />

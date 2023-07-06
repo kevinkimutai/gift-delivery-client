@@ -51,6 +51,15 @@ export const GETONEGIFT = gql`
   }
 `;
 
+export const SEARCHGIFT = gql`
+  query ($search: String!) {
+    searchGift(search: $search) {
+      name
+      price
+    }
+  }
+`;
+
 export const GETUSER = gql`
   query getUserById($id: ID!) {
     user(id: $id) {
