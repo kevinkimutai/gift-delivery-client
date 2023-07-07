@@ -40,6 +40,7 @@ const renderCustomizedLabel = ({
 const Chart = () => {
   return (
     <div className="w-1/3">
+      <h1 className="mb-2 text-center text-xl font-bold">Order Summary</h1>
       <PieChart width={400} height={400}>
         <Pie
           data={data}
@@ -56,7 +57,36 @@ const Chart = () => {
           ))}
         </Pie>
       </PieChart>
-      <div className=""></div>
+      <div className="flex flex-wrap justify-center items-center">
+        <div className="flex justify-center items-center m-1">
+          <div
+            className="w-[2rem] h-[2rem]"
+            style={{ background: COLORS[0] }}
+          ></div>
+          <span className="ml-1">Pending Orders</span>
+        </div>
+        <div className="flex justify-center items-center m-1">
+          <div
+            className="w-[2rem] h-[2rem]"
+            style={{ background: COLORS[1] }}
+          ></div>
+          <span className="ml-1">Fulfilled Orders</span>
+        </div>
+        <div className="flex justify-center items-center m-1">
+          <div
+            className="w-[2rem] h-[2rem]"
+            style={{ background: COLORS[2] }}
+          ></div>
+          <span className="ml-1">Cancelled Orders</span>
+        </div>
+        <div className="flex justify-center items-center m-1">
+          <div
+            className="w-[2rem] h-[2rem]"
+            style={{ background: COLORS[3] }}
+          ></div>
+          <span className="ml-1">Returned Orders</span>
+        </div>
+      </div>
     </div>
   );
 };

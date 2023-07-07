@@ -10,6 +10,8 @@ import { default as PromoMsg } from "./PromoMsg";
 import { default as PromoBanner } from "./PromoBanner";
 import { default as MenuBar } from "./MenuBar";
 import { default as Search } from "./Search";
+import { default as MainBannersLeft } from "./MainBannersLeft";
+import { default as BannerCarousel } from "./BannerCarousel";
 
 export {
   Banner,
@@ -24,4 +26,6 @@ export {
   PromoBanner,
   MenuBar,
   Search,
+  MainBannersLeft,
+  BannerCarousel,
 };

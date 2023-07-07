@@ -1,10 +1,10 @@
 import React from "react";
 
-const OrdersTable = () => {
+const ProductsTable = () => {
   return (
-    <div className="w-2/3">
-      <h1 className="mb-2 text-center text-xl font-bold">Pending Orders</h1>
-      <table className=" divide-y divide-gray-200 table-fixed">
+    <div className="w-1/2">
+      <h1 className="mb-2 text-center text-xl font-bold">Most Selling Items</h1>
+      <table className=" divide-y divide-gray-200 table-fixed p-2">
         <thead className="bg-purple-100">
           <tr>
             <th className=" p-3 w-[5rem] text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -108,4 +108,4 @@ const OrdersTable = () => {
   );
 };
 
-export default OrdersTable;
+export default ProductsTable;

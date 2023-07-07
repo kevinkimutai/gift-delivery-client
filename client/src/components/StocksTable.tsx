@@ -1,9 +1,9 @@
 import React from "react";
 
-const OrdersTable = () => {
+const StockControlTable = () => {
   return (
-    <div className="w-2/3">
-      <h1 className="mb-2 text-center text-xl font-bold">Pending Orders</h1>
+    <div className="w-1/2">
+      <h1 className="mb-2 text-center text-xl font-bold">Stock Control</h1>
       <table className=" divide-y divide-gray-200 table-fixed">
         <thead className="bg-purple-100">
           <tr>
@@ -108,4 +108,4 @@ const OrdersTable = () => {
   );
 };
 
-export default OrdersTable;
+export default StockControlTable;

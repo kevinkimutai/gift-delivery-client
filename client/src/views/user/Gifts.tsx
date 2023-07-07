@@ -1,7 +1,12 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 
-import { GiftRow, PromoMsg, ShopNavigation } from "../../components";
+import {
+  BannerCarousel,
+  GiftRow,
+  PromoMsg,
+  ShopNavigation,
+} from "../../components";
 import { GETALLCATEGORIES } from "../../services/graphql/queriesMutations";
 import { PuffLoader } from "react-spinners";
 import BotpressWebChat from "../../components/BotPress";
@@ -25,7 +30,7 @@ const Gifts = () => {
               key={data.categories[0].id}
               category={data.categories[0].id}
             /> */}
-
+            <BannerCarousel />
             <GiftRow
               key={data.categories[1].id}
               category={data.categories[1]}
