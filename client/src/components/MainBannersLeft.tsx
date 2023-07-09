@@ -31,7 +31,7 @@ const MainBannersLeft = ({ images }: PageProps) => {
           exit="exit"
           variants={variants}
           transition={{ duration: 0.5 }}
-          className={"absolute object-contain w-full"}
+          className={"absolute object-contain"}
         />
       ))}
     </div>

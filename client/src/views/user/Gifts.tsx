@@ -14,7 +14,7 @@ import BotpressWebChat from "../../components/BotPress";
 const Gifts = () => {
   const { error, loading, data } = useQuery(GETALLCATEGORIES);
   return (
-    <main className="bg-gradient-to-r from-yellow-200 to-white overflow-x-hidden overflow-y-scroll h-screen w-screen">
+    <main className="bg-gradient-to-r from-yellow-200 to-white overflow-x-hidden overflow-y-scroll h-screen w-full">
       <PromoMsg />
       <ShopNavigation />
       {loading ? (

@@ -12,6 +12,7 @@ import { default as MenuBar } from "./MenuBar";
 import { default as Search } from "./Search";
 import { default as MainBannersLeft } from "./MainBannersLeft";
 import { default as BannerCarousel } from "./BannerCarousel";
+import { default as Shipping } from "./Shipping";
 
 export {
   Banner,
@@ -28,4 +29,5 @@ export {
   Search,
   MainBannersLeft,
   BannerCarousel,
+  Shipping,
 };

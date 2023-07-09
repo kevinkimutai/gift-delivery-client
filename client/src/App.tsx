@@ -15,6 +15,7 @@ import {
 } from "./views";
 import { Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { Shipping } from "./components";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
 
         {/*AUTH USERS ROUTES*/}
         <Route path="/user/cart" element={<ShoppingCart />} />
-
+        <Route path="/user/shipping" element={<Shipping />} />
         {/*Admin Route */}
 
         <Route

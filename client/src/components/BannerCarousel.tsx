@@ -18,18 +18,18 @@ import MainBannersLeft from "./MainBannersLeft";
 import MainBannersRight from "./MainBannersRight";
 
 const imagesRight = [
-  "https://cdn.shopify.com/s/files/1/0572/4779/3329/files/Schwarzkopf_1024x1024.jpg?v=1627898740",
-  "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/412ae427807905.5636b14bb42e9.jpg",
+  "https://img.freepik.com/free-psd/online-shopping-concept-banner-template_23-2148559463.jpg?w=2000",
+  "https://img.freepik.com/free-psd/e-commerce-banner-template_23-2149006697.jpg?w=2000",
 ];
 
 const imagesLeft = [
-  "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/53c66b106594355.5f9329c00868b.jpg",
-  "https://mir-s3-cdn-cf.behance.net/project_modules/1400/dcd645103685569.5f523c7f18e35.jpg",
+  "https://img.freepik.com/free-psd/horizontal-banner-template-big-sale-with-woman-shopping-bags_23-2148786755.jpg?w=2000",
+  "https://img.freepik.com/premium-psd/online-shopping-store-concept-mobile-phone-with-3d-shopping-cart-shopping-bag-like-icon_106244-2052.jpg",
 ];
 
 const BannerCarousel = () => {
   return (
-    <div className="flex mx-4 sm:mx-10  my-2  w-full ">
+    <div className="relative flex mx-4 sm:mx-10 my-4  overflow-hidden ">
       <MainBannersLeft images={imagesRight} />
       <MainBannersRight images={imagesLeft} />
     </div>

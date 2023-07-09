@@ -32,7 +32,7 @@ const MainBannersRight = ({ images }: PageProps) => {
             exit="exit"
             variants={variants}
             transition={{ duration: 0.5 }}
-            className={"absolute object-contain w-full"}
+            className={"absolute object-contain"}
           />
           {/* <motion.button className="absolute bottom-2 right-2 bg-white text-black font-bold px-3 py-1 rounded-2xl shadow">
             Shop Now
