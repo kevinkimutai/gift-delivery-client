@@ -8,32 +8,30 @@ const MainBannersLeft = ({ images }: PageProps) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex: any) => (prevIndex + 1) % images.length);
+      if (currentIndex === images.length - 1) {
+        setCurrentIndex(0);
+      } else {
+        setCurrentIndex((prev) => prev + 1);
+      }
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [images]);
+  }, [currentIndex, images]);
 
-  const variants = {
-    hidden: { opacity: 0, x: "-100%" },
-    visible: { opacity: 1, x: "0%" },
-    exit: { opacity: 0, x: "100%" },
-  };
+  // const variants = {
+  //   hidden: { opacity: 0, x: "-100%" },
+  //   visible: { opacity: 1, x: "0%" },
+  //   exit: { opacity: 0, x: "100%" },
+  // };
+
   return (
-    <div className="relative w-1/2 h-[15rem]">
-      {images.map((image, index) => (
-        <motion.img
-          key={index}
-          src={image}
-          alt={`Image ${index + 1}`}
-          initial={index === 0 ? "visible" : "hidden"}
-          animate={index === currentIndex ? "visible" : "hidden"}
-          exit="exit"
-          variants={variants}
-          transition={{ duration: 0.5 }}
-          className={"absolute object-contain"}
-        />
-      ))}
+    <div className="flex relative w-full h-fit ">
+      <motion.img
+        key={images[currentIndex]}
+        src={images[currentIndex]}
+        alt={"carousel"}
+        className={"relative h-auto object-contain"}
+      />
     </div>
   );
 };

@@ -12,26 +12,28 @@
 
 // export default BannerCarousel;
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+// import React, { useEffect, useState } from "react";
+// import { motion } from "framer-motion";
 import MainBannersLeft from "./MainBannersLeft";
-import MainBannersRight from "./MainBannersRight";
+// import MainBannersRight from "./MainBannersRight";
 
 const imagesRight = [
-  "https://img.freepik.com/free-psd/online-shopping-concept-banner-template_23-2148559463.jpg?w=2000",
-  "https://img.freepik.com/free-psd/e-commerce-banner-template_23-2149006697.jpg?w=2000",
+  "https://ke.jumia.is/cms/2023/W18/HP/Sliders/JAS/KE_Maybelline_OfficialStore_0523_SiS.jpg",
+  "https://ke.jumia.is/cms/2023/W18/HP/Sliders/JAS/KE_PRK_OfficialStore_0523_SiS.jpg",
+  "https://ke.jumia.is/cms/2023/W18/HP/Sliders/JAS/KE_Nivea_OfficialStore_0523_SiS.jpg",
 ];
 
-const imagesLeft = [
-  "https://img.freepik.com/free-psd/horizontal-banner-template-big-sale-with-woman-shopping-bags_23-2148786755.jpg?w=2000",
-  "https://img.freepik.com/premium-psd/online-shopping-store-concept-mobile-phone-with-3d-shopping-cart-shopping-bag-like-icon_106244-2052.jpg",
-];
+// const imagesLeft = [
+//   "https://ke.jumia.is/cms/2023/W18/HP/Sliders/JAS/KE_Maybelline_OfficialStore_0523_SiS.jpg",
+//   "https://ke.jumia.is/cms/2023/W18/HP/Sliders/JAS/KE_PRK_OfficialStore_0523_SiS.jpg",
+//   "https://ke.jumia.is/cms/2023/W18/HP/Sliders/JAS/KE_Nivea_OfficialStore_0523_SiS.jpg",
+// ];
 
 const BannerCarousel = () => {
   return (
-    <div className="relative flex mx-4 sm:mx-10 my-4  overflow-hidden ">
+    <div className="relative flex mx-4 sm:mx-10 my-4 h-fit  overflow-hidden ">
       <MainBannersLeft images={imagesRight} />
-      <MainBannersRight images={imagesLeft} />
+      {/* <MainBannersRight images={imagesLeft} /> */}
     </div>
   );
 };

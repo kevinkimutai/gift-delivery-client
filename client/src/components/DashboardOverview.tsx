@@ -1,5 +1,4 @@
 import React from "react";
-import { HiOutlineClipboardDocumentCheck } from "react-icons/hi2";
 
 type PageProps = {
   type: string;

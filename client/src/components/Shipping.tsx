@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import ShopNavigation from "./ShopNavigation";
-import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
-import {
-  HiAtSymbol,
-  HiOutlineUser,
-  HiPlusSmall,
-  HiTrash,
-} from "react-icons/hi2";
+// import { useDispatch, useSelector } from "react-redux";
+
+import { HiAtSymbol, HiOutlineUser } from "react-icons/hi2";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import PhoneNumberInput from "./PhoneNumberInput";
@@ -15,9 +10,9 @@ import DeliveryTabs from "./DeliveryTabs";
 import { MdOutlineLocationSearching } from "react-icons/md";
 
 const Shipping = () => {
-  const cartItems = useSelector((state: any) => state.cartItems.cartItems);
-  const [totalPrice, setTotalPrice] = useState<number>();
-  const dispatch = useDispatch();
+  // const cartItems = useSelector((state: any) => state.cartItems.cartItems);
+  // const [totalPrice, setTotalPrice] = useState<number>();
+  // const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -40,7 +35,8 @@ const Shipping = () => {
           // Define your geolocation validation logic here
           // For example, you can use regular expressions to validate the format
           //@ts-ignore
-          const geolocationRegex = /^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$/;
+          const geolocationRegex = /^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$/;
+
           return geolocationRegex.test(value);
         }
       ),
@@ -233,7 +229,7 @@ const Shipping = () => {
                   <p>SubTotal:</p>
                   <p>
                     <span className=" font-semibold mr-2">Kshs</span>
-                    <span className="font-semibold text-md">{totalPrice}</span>
+                    <span className="font-semibold text-md">"47000"</span>
                   </p>
                 </div>
 
@@ -388,7 +384,7 @@ const Shipping = () => {
                   <p className="text-lg font-semibold">TOTAL:</p>
                   <p>
                     <span className=" font-semibold mr-2">Kshs</span>
-                    <span className="font-bold text-lg">{totalPrice}</span>
+                    <span className="font-bold text-lg">48000</span>
                   </p>
                 </div>
                 {/* <button className="bg-white w-full rounded-md text-purple-600 font-semibold p-2">
