@@ -34,6 +34,9 @@ const DashboardLayout = () => {
             className={`flex justify-center items-center py-2 cursor-pointer ${
               active ? "bg-purple-500 rounded-md px-6 text-white" : ""
             }`}
+            onClick={() => {
+              setActive(false);
+            }}
           >
             <span className="mr-1">
               <HiHomeModern />
