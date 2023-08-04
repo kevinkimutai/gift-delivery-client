@@ -15,7 +15,7 @@ import { store } from "./store/store";
 
 const uri =
   process.env.NODE_ENV === "production"
-    ? "https://gift-server.onrender.com/"
+    ? "https://gift-server.onrender.com/graphql"
     : "http://localhost:4000/graphql";
 
 //TODO: ADD Production URL INSTEAD OF LOCALHOST DURING DEPLOYMENT
