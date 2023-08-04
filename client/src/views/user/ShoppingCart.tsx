@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ShopNavigation } from "../../components";
+import { Footer, ShopNavigation } from "../../components";
 import { HiMinusSmall, HiPlusSmall, HiTrash } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
@@ -81,12 +81,12 @@ const ShoppingCart = () => {
     <>
       <ShopNavigation />
       <section className="px-4 sm:px-10 py-5 bg-gradient-to-r from-yellow-200 to-white overflow-hidden min-h-screen w-screen">
-        <h1 className="font-semibold text-purple-600 text-2xl mb-4">
-          Shopping Cart
-        </h1>
         <div className="flex justify-center">
           <div className="flex flex-col-reverse md:flex-row  w-full shadow-md p-2 lg:p-5 bg-white rounded-xl">
             <div className="flex flex-col h-full w-full md:w-2/3">
+              <h1 className="font-semibold text-purple-600 text-xl mb-8">
+                Shopping Cart
+              </h1>
               {cartItems.map((cart: any) => (
                 <div
                   className="flex justify-between items-start w-full md:w-[80%] border-b border-red-700  p-4 "
@@ -183,6 +183,7 @@ const ShoppingCart = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

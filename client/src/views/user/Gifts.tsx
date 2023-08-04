@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 
 import {
   BannerCarousel,
+  Footer,
   GiftRow,
   PromoMsg,
   ShopNavigation,
@@ -42,7 +43,7 @@ const Gifts = () => {
             />
 
             {/* <PromoBanner /> */}
-
+            <BannerCarousel />
             <GiftRow
               key={data.categories[2].id}
               category={data.categories[2]}
@@ -50,6 +51,8 @@ const Gifts = () => {
             <div className="w-[10rem] z-[150] shadow-xl">
               <BotpressWebChat />
             </div>
+
+            <Footer />
           </>
         )
       )}

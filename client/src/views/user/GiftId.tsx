@@ -1,5 +1,5 @@
 import React from "react";
-import { ShopNavigation } from "../../components";
+import { Footer, ShopNavigation } from "../../components";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GETONEGIFT } from "../../services/graphql/queriesMutations";
@@ -58,59 +58,62 @@ const GiftId = () => {
         </div>
       ) : (
         data && (
-          <section className="flex flex-col sm:flex-row justify-center p-4 sm:p-10 ">
-            <div className="w-full sm:w-1/3 ">
-              <img
-                src={data.gift.image}
-                className="object-contain"
-                alt={"gift"}
-              />
-            </div>
-            {/*TODO: ADD SCROLLING EFFECT FOR TEXTS */}
-            <div className="flex flex-col border w-full sm:w-1/2 p-4 sm:p-10 bg-slate-500">
-              <h2 className="font-semibold text-2xl text-white mb-5">
-                {data.gift.name}
-              </h2>
-              <p className="ml-auto mb-5">
-                <span className="font-semibold mr-3 text-yellow-300 text-2xl">
-                  Kshs
-                </span>
-                <span className="font-bold text-white text-xl">
-                  {data.gift.price}
-                </span>
-              </p>
-              <p className="mb-12 text-neutral-200">
-                {data.gift.description.text}
-              </p>
-              <ul className="list-disc text-neutral-200 mb-4 p-4">
-                {data.gift.description.features.map(
-                  (feature: string, indx: number) => (
-                    <li key={indx} className="mb-4 text-yellow-300">
-                      {feature}
-                    </li>
-                  )
-                )}
-              </ul>
-              <div className="flex ml-auto items-center">
-                <motion.button
-                  whileTap={{ scale: 1.05 }}
-                  className="px-4 py-2 mr-3 ring-1 ring-white text-white hover:bg-white hover:text-slate-500 "
-                >
-                  Back
-                </motion.button>
-                <motion.button
-                  whileTap={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-white text-slate-500 hover:bg-opacity-0 hover:text-white hover:ring-1 hover:ring-white "
-                  onClick={() => {
-                    addToCartHandler(data.gift);
-                  }}
-                >
-                  Add To Cart
-                </motion.button>
+          <>
+            <section className="flex flex-col sm:flex-row justify-center p-4 sm:p-10 ">
+              <div className="w-full sm:w-1/3 ">
+                <img
+                  src={data.gift.image}
+                  className="object-contain"
+                  alt={"gift"}
+                />
               </div>
-            </div>
-            {/*TODO: ADD SIMILAR PRODUCTS SECTION */}
-          </section>
+              {/*TODO: ADD SCROLLING EFFECT FOR TEXTS */}
+              <div className="flex flex-col border w-full sm:w-1/2 p-4 sm:p-10 bg-slate-500">
+                <h2 className="font-semibold text-2xl text-white mb-5">
+                  {data.gift.name}
+                </h2>
+                <p className="ml-auto mb-5">
+                  <span className="font-semibold mr-3 text-yellow-300 text-2xl">
+                    Kshs
+                  </span>
+                  <span className="font-bold text-white text-xl">
+                    {data.gift.price}
+                  </span>
+                </p>
+                <p className="mb-12 text-neutral-200">
+                  {data.gift.description.text}
+                </p>
+                <ul className="list-disc text-neutral-200 mb-4 p-4">
+                  {data.gift.description.features.map(
+                    (feature: string, indx: number) => (
+                      <li key={indx} className="mb-4 text-yellow-300">
+                        {feature}
+                      </li>
+                    )
+                  )}
+                </ul>
+                <div className="flex ml-auto items-center">
+                  <motion.button
+                    whileTap={{ scale: 1.05 }}
+                    className="px-4 py-2 mr-3 ring-1 ring-white text-white hover:bg-white hover:text-slate-500 "
+                  >
+                    Back
+                  </motion.button>
+                  <motion.button
+                    whileTap={{ scale: 1.05 }}
+                    className="px-4 py-2 bg-white text-slate-500 hover:bg-opacity-0 hover:text-white hover:ring-1 hover:ring-white "
+                    onClick={() => {
+                      addToCartHandler(data.gift);
+                    }}
+                  >
+                    Add To Cart
+                  </motion.button>
+                </div>
+              </div>
+              {/*TODO: ADD SIMILAR PRODUCTS SECTION */}
+            </section>
+            <Footer />
+          </>
         )
       )}
     </main>
